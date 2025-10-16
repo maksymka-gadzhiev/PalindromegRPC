@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "org.example.palindrome";
+option java_outer_classname = "PalindromeProto";
+option java_multiple_files = true;
+
+service PalindromeService {
+  rpc CheckPalindrome (PalindromeRequest) returns (PalindromeResponse) {}
+}
+
+message PalindromeRequest {
+  string message = 1;
+}
+
+message PalindromeResponse {
+  string status = 1;
+  bool is_palindrome = 2;
+  string original_message = 3;
+  string processed_message = 4;
+}
